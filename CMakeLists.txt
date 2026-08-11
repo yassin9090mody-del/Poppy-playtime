@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.11)
 
-project(FactoryHorror)
+project(ShadowRunner)
 
 add_executable(${PROJECT_NAME} main.c)
 
@@ -8,7 +8,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     pspdebug
     pspdisplay
     pspge
-    pspctrl
+    pspgu
 )
 
 create_pbp_file(
@@ -16,6 +16,6 @@ create_pbp_file(
     ICON_PATH NULL
     BACKGROUND_PATH NULL
     PREVIEW_PATH NULL
-    TITLE "Factory Horror"
+    TITLE "Shadow Runner"
     VERSION 01.00
 )
