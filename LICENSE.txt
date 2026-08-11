@@ -1,0 +1,3 @@
+Original prototype code created for this project.
+You may modify the code for personal/fan-made development.
+Do not add copyrighted game assets from Poppy Playtime unless you have permission to use them.
