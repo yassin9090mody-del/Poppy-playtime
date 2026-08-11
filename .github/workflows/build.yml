@@ -1,0 +1,26 @@
+name: Build PSP Homebrew
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build with PSPDEV
+        run: |
+          docker run --rm \
+            -v "${GITHUB_WORKSPACE}:/source" \
+            pspdev/pspdev:latest \
+            bash -lc "cd /source && mkdir -p build && cd build && psp-cmake .. && make"
+
+      - name: Upload EBOOT.PBP
+        uses: actions/upload-artifact@v4
+        with:
+          name: FactoryHorror-EBOOT
+          path: build/EBOOT.PBP
