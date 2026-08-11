@@ -17,7 +17,7 @@ jobs:
           docker run --rm \
             -v "${GITHUB_WORKSPACE}:/source" \
             pspdev/pspdev:latest \
-            bash -lc "cd /source && mkdir -p build && cd build && psp-cmake .. && make"
+            bash -lc "cd /source && mkdir -p build && cd build && cmake .. && make"
 
       - name: Upload EBOOT.PBP
         uses: actions/upload-artifact@v4
